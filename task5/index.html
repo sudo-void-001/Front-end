@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENA VIDI VICI - Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <h1 class="brand">VENA VIDI VICI</h1>
+            <p class="subtitle">Task Manager</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="task-entry-section">
+            <div class="task-input-container">
+                <input type="text" id="task-input" class="task-input" placeholder="What needs to be done?" aria-label="New task description">
+                <button id="add-task-btn" class="btn-primary" aria-label="Add task">Add</button>
+            </div>
+            <div id="validation-message" class="validation-message hidden" aria-live="polite">
+                Please enter a task.
+            </div>
+        </section>
+
+        <section class="task-summary" id="task-summary" aria-live="polite">
+            0 total &middot; 0 active &middot; 0 completed
+        </section>
+
+        <section class="board">
+            <!-- TODO Column -->
+            <div class="list" id="list-todo">
+                <div class="list-header">
+                    <h2 class="list-title">TO DO <span class="list-count" id="count-todo">0</span></h2>
+                </div>
+                <div class="task-items-container" id="container-todo"></div>
+                <div class="empty-state" id="empty-todo">No tasks yet</div>
+            </div>
+
+            <!-- IN PROGRESS Column -->
+            <div class="list" id="list-in-progress">
+                <div class="list-header">
+                    <h2 class="list-title">IN PROGRESS <span class="list-count" id="count-in-progress">0</span></h2>
+                </div>
+                <div class="task-items-container" id="container-in-progress"></div>
+                <div class="empty-state" id="empty-in-progress">Nothing in progress</div>
+            </div>
+
+            <!-- COMPLETED Column -->
+            <div class="list" id="list-completed">
+                <div class="list-header">
+                    <h2 class="list-title">COMPLETED <span class="list-count" id="count-completed">0</span></h2>
+                </div>
+                <div class="task-items-container" id="container-completed"></div>
+                <div class="empty-state" id="empty-completed">No completed tasks</div>
+            </div>
+        </section>
+        
+        <section class="sticky-notes-section">
+            <div class="sticky-notes-header">
+                <h2>Sticky Notes</h2>
+                <button id="add-sticky-btn" class="btn-primary" aria-label="Add sticky note">+ Add Note</button>
+            </div>
+            <div id="sticky-notes-container" class="sticky-notes-grid">
+                <!-- Sticky notes inserted here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <template id="task-template">
+        <div class="task-card">
+            <button class="btn-status-toggle" aria-label="Cycle task status">
+                <!-- Icon injected via JavaScript -->
+            </button>
+            <span class="task-text"></span>
+            <button class="btn-delete" aria-label="Delete task">
+                <svg class="icon-delete" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </template>
+    
+    <template id="sticky-note-template">
+        <div class="sticky-note">
+            <button class="btn-delete-sticky" aria-label="Delete sticky note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <textarea class="sticky-text" placeholder="Write something..." aria-label="Sticky note content"></textarea>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

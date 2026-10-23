@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANIMEVAULT</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="logo">ANIME<span>VAULT</span></div>
+      <nav class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#rows">Series</a>
+        <a href="#rows">Films</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <input type="text" id="searchInput" class="nav-search" placeholder="🔍  Search titles, genres…" autocomplete="off" />
+    </div>
+  </header>
+
+  <!-- ── HERO BILLBOARD (scrollable carousel) ────────── -->
+  <section class="billboard" id="billboard">
+    <div class="billboard-track" id="billboardTrack">
+      <!-- slides injected by JS -->
+    </div>
+
+    <!-- Progress dots -->
+    <div class="billboard-dots" id="billboardDots"></div>
+
+    <!-- Prev / Next arrows -->
+    <button class="billboard-arrow left"  id="billboardPrev">&#10094;</button>
+    <button class="billboard-arrow right" id="billboardNext">&#10095;</button>
+  </section>
+
+  <!-- ── CATEGORY PILLS ──────────────────────────────── -->
+  <div class="category-bar" id="categoryBar">
+    <div class="filter-pills" id="filterPills">
+      <!-- injected by JS -->
+    </div>
+    <button class="clear-pill" id="clearBtn">✕ Clear</button>
+  </div>
+
+  <!-- ── CONTENT ROWS ────────────────────────────────── -->
+  <main class="rows-container" id="rows">
+    <!-- injected by JS -->
+  </main>
+
+  <!-- ── MODAL ───────────────────────────────────────── -->
+  <div class="modal-backdrop hidden" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-inner" id="modalInner">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

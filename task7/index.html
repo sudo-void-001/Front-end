@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELIER | Service Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">ATELIER</a>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Services</a>
+                <a href="how-it-works.html">How it works</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <div class="layout-2col">
+            <div class="col-left">
+                <h1 class="hero-title">Book a session.</h1>
+                <p class="hero-subtitle">Choose a focused session and find a time that works for you.</p>
+                <div class="context-info">
+                    <p>Make time for good work. Our sessions are designed to help you break through creative blocks and define a clear path forward.</p>
+                </div>
+            </div>
+            
+            <div class="col-right">
+                <div class="services-container" id="servicesList">
+                    <!-- Services will be rendered here via JS -->
+                </div>
+                
+                <div class="action-footer">
+                    <button id="btnContinue" class="btn-primary" disabled>Continue to date & time</button>
+                    <p id="selectionValidation" class="validation-msg hidden">Choose a service to continue.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

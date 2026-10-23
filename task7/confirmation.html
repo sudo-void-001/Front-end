@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELIER | Booking Confirmed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">ATELIER</a>
+            <nav class="main-nav">
+                <a href="index.html">Services</a>
+                <a href="how-it-works.html">How it works</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="confirmation-container">
+            <div class="success-icon">✓</div>
+            <h1 class="hero-title" style="margin-bottom: 12px; font-size: 40px;">Booking confirmed.</h1>
+            <p class="hero-subtitle">You're all set.</p>
+            
+            <div class="booking-ref" id="bookingReference">AT-0000-0000</div>
+            
+            <div class="confirmation-details">
+                <p>Your <strong id="confServiceName">Service</strong> is booked for:</p>
+                <h3 style="margin-top: 16px; margin-bottom: 4px;" id="confDate">Date</h3>
+                <h2 style="margin-bottom: 24px;" id="confTime">Time</h2>
+                
+                <p style="color: var(--text-secondary); margin-bottom: 4px;">Customer:</p>
+                <p id="confName" style="font-weight: 500;">Name</p>
+                <p id="confEmail" style="color: var(--text-secondary);">Email</p>
+            </div>
+            
+            <h3 style="font-size: 16px; margin-bottom: 12px;">What happens next?</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 40px;">You'll receive the session details and a calendar invitation at the email provided.</p>
+            
+            <div>
+                <button id="btnHome" class="btn-primary" style="width: auto;">Back to home</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+</html>

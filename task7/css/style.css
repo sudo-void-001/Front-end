@@ -1,0 +1,563 @@
+:root {
+    --bg-color: #F7F6F2;
+    --text-primary: #1E1E1B;
+    --text-secondary: #6D6B65;
+    --border-color: #D9D7D0;
+    --surface-color: #FFFFFF;
+    --surface-muted: #EFEDE7;
+    --accent-primary: #1F4D3A;
+    --accent-hover: #173B2D;
+    --success: #3E7655;
+    --error: #B54A42;
+    
+    --font-sans: 'Inter', sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+.brand {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+}
+
+.hero-title {
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 0;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-left: 32px;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--text-primary);
+}
+
+/* Layout */
+.page-content {
+    padding: 80px 24px;
+}
+
+.layout-2col {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 80px;
+}
+
+.col-left {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+/* Components */
+.service-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    border-color: var(--text-secondary);
+}
+
+.service-card.selected {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.service-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.service-price {
+    font-weight: 500;
+}
+
+.service-desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.service-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: auto;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+    background-color: var(--surface-muted);
+}
+
+.action-footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.validation-msg {
+    color: var(--error);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Date Selector */
+.date-selector {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    scrollbar-width: none;
+}
+
+.date-selector::-webkit-scrollbar {
+    display: none;
+}
+
+.date-btn {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.date-btn:hover {
+    border-color: var(--text-secondary);
+}
+
+.date-btn.selected {
+    border-color: var(--accent-primary);
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.date-day {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.date-num {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Time Slots */
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.time-btn {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 16px 0;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-btn:hover {
+    border-color: var(--text-secondary);
+}
+
+.time-btn.selected {
+    border-color: var(--accent-primary);
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.time-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--surface-muted);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-family: inherit;
+    background-color: var(--surface-color);
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.form-input.error {
+    border-color: var(--error);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error-text {
+    color: var(--error);
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+.form-input.error + .error-text {
+    display: block;
+}
+
+/* Progress */
+.progress-indicator {
+    margin-bottom: 48px;
+}
+
+.step-list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.step-item {
+    font-size: 13px;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.step-item.active {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.step-item.completed {
+    color: var(--text-primary);
+}
+
+.step-item:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -16px;
+    opacity: 0.5;
+}
+
+/* Selected Service Summary */
+.summary-box {
+    background-color: var(--surface-muted);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 32px;
+}
+
+.summary-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.summary-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Review Section */
+.review-section {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.review-section:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.review-header h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.edit-link {
+    font-size: 13px;
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.review-data p {
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.review-data .price-row {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* Confirmation */
+.confirmation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--success);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 32px;
+}
+
+.booking-ref {
+    font-family: monospace;
+    font-size: 18px;
+    background-color: var(--surface-muted);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin: 16px 0 32px;
+}
+
+.confirmation-details {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+/* Steps Display in Booking */
+.step-content {
+    display: none;
+}
+
+.step-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .layout-2col {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 40px 24px;
+    }
+    
+    .layout-2col {
+        grid-template-columns: 1fr;
+    }
+    
+    .col-left {
+        position: static;
+        margin-bottom: 24px;
+    }
+    
+    .hero-title {
+        margin-bottom: 16px;
+    }
+    
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

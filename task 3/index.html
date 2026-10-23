@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptonite — Steganography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav">
+            <span class="logo">cryptonite</span>
+            <div class="nav-links">
+                <a href="#gallery">Gallery</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="pill reveal">Research & Education</span>
+                <h1 id="hero-title" class="reveal">The art of concealing secrets in plain sight.</h1>
+                <p class="hero-sub reveal">Cryptonite is an open educational project exploring modern steganography — how information can be hidden inside ordinary-looking digital media.</p>
+                <div class="hero-actions reveal">
+                    <button id="open-modal-btn" class="btn-primary">How does it work?</button>
+                    <a href="https://github.com/sudo-void-001/Cryptonite" target="_blank" rel="noopener noreferrer" class="btn-ghost">&lt;/&gt; Repository</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2 class="section-label reveal">Visual Forensics Gallery</h2>
+                <p class="section-sub reveal">Common steganography mediums and techniques</p>
+            </div>
+            <div class="gallery-track">
+                <div class="g-card reveal">
+                    <img src="images/image-steg.jpg" alt="Image Steganography" loading="lazy">
+                    <div class="g-card-body">
+                        <span class="tag">Image</span>
+                        <h3>Pixel-Level Encoding</h3>
+                        <p>Subtle bit shifts in RGB values concealing encrypted payloads invisible to the naked eye.</p>
+                    </div>
+                </div>
+                <div class="g-card reveal">
+                    <img src="images/audio-steg.jpg" alt="Audio Steganography" loading="lazy">
+                    <div class="g-card-body">
+                        <span class="tag">Audio</span>
+                        <h3>Frequency Watermarking</h3>
+                        <p>Hidden data embedded within audio frequencies, revealed through spectral analysis.</p>
+                    </div>
+                </div>
+                <div class="g-card reveal">
+                    <img src="images/text-steg.jpg" alt="Text Steganography" loading="lazy">
+                    <div class="g-card-body">
+                        <span class="tag">Text</span>
+                        <h3>Linguistic Concealment</h3>
+                        <p>Information hidden using invisible formatting, zero-width characters, or spacing patterns.</p>
+                    </div>
+                </div>
+                <div class="g-card reveal">
+                    <img src="images/cyber-shield.jpg" alt="Detection" loading="lazy">
+                    <div class="g-card-body">
+                        <span class="tag rose">Detection</span>
+                        <h3>Steganalysis Defence</h3>
+                        <p>Statistical tools and algorithms that detect anomalies suggesting hidden data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-label reveal">Frequently asked questions</h2>
+                <div class="accordion">
+                    <div class="faq-item reveal">
+                        <button class="faq-q">How does steganography differ from encryption? <span class="icon">+</span></button>
+                        <div class="faq-a"><p>Encryption scrambles a message so it cannot be read. Steganography conceals the very existence of the communication itself.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-q">Where is steganography used? <span class="icon">+</span></button>
+                        <div class="faq-a"><p>Watermarking, copyright protection, secure communication, and bypassing censorship by hiding data in plain sight.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-q">Can modern tools detect hidden data? <span class="icon">+</span></button>
+                        <div class="faq-a"><p>Yes. Statistical chi-square analysis and sample pair analysis can detect basic modifications, which is why advanced adaptive algorithms exist.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-q">Is experimenting with steganography safe? <span class="icon">+</span></button>
+                        <div class="faq-a"><p>Yes, when done for educational purposes. Cryptonite provides benign test vectors specifically curated for academic learning.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="form-card reveal">
+                    <h2 class="section-label">Get in touch</h2>
+                    <p class="section-sub">Have a question about steganography or the Cryptonite project?</p>
+                    <form id="contact-form" novalidate>
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name">
+                            <span class="err" id="name-error"></span>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="you@example.com">
+                            <span class="err" id="email-error"></span>
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" placeholder="What's on your mind?"></textarea>
+                            <span class="err" id="message-error"></span>
+                        </div>
+                        <button type="submit" class="btn-primary full">Send message</button>
+                        <div id="form-success" class="success"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container foot">
+            <span class="logo">cryptonite</span>
+            <a href="https://github.com/sudo-void-001/Cryptonite" target="_blank" rel="noopener noreferrer" class="btn-ghost small">&lt;/&gt; GitHub</a>
+            <span class="muted">&copy; 2024 Educational use only.</span>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-top">
+                <h2>How steganography works</h2>
+                <button id="close-modal" class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Steganography conceals information inside another piece of information so that the hidden message is not immediately obvious to anyone who views it.</p>
+                <p>For example, data can be concealed within a digital image while the image still appears completely normal to the viewer.</p>
+                <div class="flow">
+                    <span class="flow-box">Carrier</span>
+                    <span class="flow-arrow">+</span>
+                    <span class="flow-box">Hidden data</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span class="flow-box accent">Modified file</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll ring -->
+    <div class="scroll-ring" id="scroll-ring">
+        <svg viewBox="0 0 46 46"><circle class="track" cx="23" cy="23" r="20"/><circle class="fill" id="ring-fill" cx="23" cy="23" r="20"/></svg>
+        <span class="up">&#8593;</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

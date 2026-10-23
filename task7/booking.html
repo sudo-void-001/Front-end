@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELIER | Booking Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">ATELIER</a>
+            <nav class="main-nav">
+                <a href="index.html">Services</a>
+                <a href="how-it-works.html">How it works</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <div class="layout-2col">
+            <div class="col-left">
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <ul class="step-list">
+                        <li class="step-item completed">01 Service</li>
+                        <li class="step-item active" id="progressStep2">02 Date & Time</li>
+                        <li class="step-item" id="progressStep3">03 Details</li>
+                        <li class="step-item" id="progressStep4">04 Review</li>
+                    </ul>
+                </div>
+                
+                <h1 class="hero-title" id="pageTitle">Select Date & Time.</h1>
+                <p class="hero-subtitle" id="pageSubtitle">Find a time that works for you.</p>
+                
+                <!-- Selected Service Summary -->
+                <div class="summary-box">
+                    <div class="summary-title">Selected Session</div>
+                    <div class="summary-detail">
+                        <span id="summaryServiceName" style="font-weight: 500;">Service Name</span>
+                        <span id="summaryServicePrice">₹0</span>
+                    </div>
+                    <div style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;" id="summaryServiceDuration">60 min</div>
+                </div>
+            </div>
+            
+            <div class="col-right">
+                <!-- STEP 2: DATE & TIME -->
+                <div id="step2" class="step-content active">
+                    <h3>SELECT A DATE</h3>
+                    <div class="date-selector" id="dateSelector">
+                        <!-- Dates rendered via JS -->
+                    </div>
+                    
+                    <h3>AVAILABLE TIMES</h3>
+                    <div class="time-grid" id="timeSelector">
+                        <!-- Times rendered via JS -->
+                    </div>
+                    
+                    <div class="action-footer">
+                        <button id="btnContinueStep2" class="btn-primary">Continue to details</button>
+                        <button id="btnBackStep2" class="btn-secondary">Back to services</button>
+                        <p id="dateTimeValidation" class="validation-msg hidden">Please select both a date and a time.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 3: DETAILS -->
+                <div id="step3" class="step-content">
+                    <form id="detailsForm" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="fullName">Full name</label>
+                            <input type="text" id="fullName" class="form-input" placeholder="Rajesh Pattan" required>
+                            <div class="error-text">Please enter your name.</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email address</label>
+                            <input type="email" id="email" class="form-input" placeholder="hello@example.com" required>
+                            <div class="error-text">Please enter a valid email address.</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone number</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+                            <div class="error-text">Please enter a valid phone number.</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="note">Note (optional)</label>
+                            <textarea id="note" class="form-input" placeholder="Anything we should know before the session?"></textarea>
+                        </div>
+                        
+                        <div class="action-footer">
+                            <button type="button" id="btnContinueStep3" class="btn-primary">Review booking</button>
+                            <button type="button" id="btnBackStep3" class="btn-secondary">Back to date & time</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- STEP 4: REVIEW -->
+                <div id="step4" class="step-content">
+                    <div class="review-section">
+                        <div class="review-header">
+                            <h4>Your Session</h4>
+                            <a href="#" class="edit-link" id="editService">Edit</a>
+                        </div>
+                        <div class="review-data">
+                            <p id="reviewServiceName" style="font-weight: 500;">Service Name</p>
+                            <p id="reviewServiceDuration" style="color: var(--text-secondary);">60 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-section">
+                        <div class="review-header">
+                            <h4>Date & Time</h4>
+                            <a href="#" class="edit-link" id="editDateTime">Edit</a>
+                        </div>
+                        <div class="review-data">
+                            <p id="reviewDate">Date</p>
+                            <p id="reviewTime">Time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-section">
+                        <div class="review-header">
+                            <h4>Client Details</h4>
+                            <a href="#" class="edit-link" id="editDetails">Edit</a>
+                        </div>
+                        <div class="review-data">
+                            <p id="reviewName">Name</p>
+                            <p id="reviewEmail">Email</p>
+                            <p id="reviewPhone">Phone</p>
+                            <p id="reviewNote" style="margin-top: 12px; font-style: italic; color: var(--text-secondary);"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-section">
+                        <div class="review-data">
+                            <p style="color: var(--text-secondary); font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Total Price</p>
+                            <p class="price-row" id="reviewPrice">₹0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="action-footer">
+                        <button id="btnConfirm" class="btn-primary">Confirm booking</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

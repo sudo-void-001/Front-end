@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Showcase | Spatial Portfolio</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Transition Overlay -->
+    <div id="transition-overlay" class="scene-transition">
+        <div class="transition-line"></div>
+    </div>
+
+    <!-- MAIN SCROLLABLE VIEW (Hero + Content) -->
+    <div id="view-main" class="view active">
+        <!-- Translucent Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>TECHSHOWCASE</span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#components">Components</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <video src="assets/hero_animationcursor.mp4" autoplay loop muted playsinline class="hero-video"></video>
+            <div class="hero-content">
+                <h1>GEARSPACE</h1>
+                <p>Configure yours today</p>
+            </div>
+            
+            <!-- Edge Navigation Overlays -->
+            <button id="edge-left" class="edge-nav edge-left" aria-label="Open CPU scene" data-target="view-cpu">
+                <span class="arrow-icon">← CPU</span>
+            </button>
+            <button id="edge-right" class="edge-nav edge-right" aria-label="Open RAM scene" data-target="view-ram">
+                <span class="arrow-icon">RAM →</span>
+            </button>
+            <button id="edge-bottom" class="edge-nav edge-bottom" aria-label="Open laptop scene" data-target="view-laptop">
+                <span class="arrow-icon">↓ COMPUTER</span>
+            </button>
+        </section>
+
+        <!-- Components Showcase -->
+        <section id="components" class="scene components-section">
+            <div class="section-header center">
+                <h2>Hardware Components</h2>
+                <p>Detailed view of our premium hardware parts.</p>
+            </div>
+            
+            <article class="component-panel">
+                <div class="model-preview">
+                    <div class="webgl-canvas" data-model="laptop.glb"></div>
+                </div>
+                <div class="component-info">
+                    <h2>Flagship Laptop</h2>
+                    <p>High-performance computing machine.</p>
+                    <ul class="specs">
+                        <li>Display: 16" Retina 4K</li>
+                        <li>Chassis: Aluminum</li>
+                    </ul>
+                    <div class="price">$1499.99</div>
+                </div>
+            </article>
+
+            <article class="component-panel">
+                <div class="model-preview">
+                    <div class="webgl-canvas" data-model="cpu.glb"></div>
+                </div>
+                <div class="component-info">
+                    <h2>Quantum CPU</h2>
+                    <p>16-core processor designed for intense multitasking.</p>
+                    <ul class="specs">
+                        <li>Cores: 16 (8P + 8E)</li>
+                        <li>Boost Clock: 5.4GHz</li>
+                    </ul>
+                    <div class="price">$449.99</div>
+                </div>
+            </article>
+
+            <article class="component-panel">
+                <div class="model-preview">
+                    <div class="webgl-canvas" data-model="ram.glb"></div>
+                </div>
+                <div class="component-info">
+                    <h2>High-Performance RAM</h2>
+                    <p>DDR5 memory module delivering unprecedented speeds.</p>
+                    <ul class="specs">
+                        <li>Capacity: 32GB (2x16GB)</li>
+                        <li>Speed: 6000MHz</li>
+                    </ul>
+                    <div class="price">$199.99</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Feature Cards -->
+        <section id="features" class="features-section">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Interactive 3D</h3>
+                    <p>Explore hardware models from different angles.</p>
+                </div>
+                <div class="card">
+                    <h3>Component Details</h3>
+                    <p>Understand the hardware and its specifications clearly.</p>
+                </div>
+                <div class="card">
+                    <h3>Immersive Interface</h3>
+                    <p>Navigate the experience through spatial interactions.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive Experience</h3>
+                    <p>Designed to adapt perfectly across desktop, tablet, and mobile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / Configurations -->
+        <section id="pricing" class="pricing-section">
+            <h2 class="section-title">Configuration & Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-model-preview">
+                        <!-- Removed heavy 3D canvases here, keeping it clean as a pricing card -->
+                        <h3>Base Configuration</h3>
+                    </div>
+                    <div class="price-large">$999</div>
+                    <ul>
+                        <li>Standard CPU (8-core)</li>
+                        <li>16GB RAM DDR4</li>
+                        <li>512GB SSD Storage</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-model-preview">
+                        <h3>Pro Configuration</h3>
+                    </div>
+                    <div class="price-large">$1499</div>
+                    <ul>
+                        <li>Quantum CPU (16-core)</li>
+                        <li>32GB RAM DDR5</li>
+                        <li>1TB NVMe SSD</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-model-preview">
+                        <h3>Ultimate Rig</h3>
+                    </div>
+                    <div class="price-large">$2499</div>
+                    <ul>
+                        <li>Quantum Ultra (24-core)</li>
+                        <li>64GB RAM DDR5</li>
+                        <li>4TB NVMe SSD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <img src="assets/profile.jpg" alt="Profile" class="profile-img">
+                <div class="about-info">
+                    <h2>Rajesh Pattan</h2>
+                    <p>Frontend Developer Intern | Spatial UI Enthusiast</p>
+                    <p>Creating immersive web experiences blending clean typography with interactive 3D elements.</p>
+                    <div class="social-links">
+                        <a href="mailto:rajeshpattan@gmail.com">Email</a>
+                        <a href="https://github.com/sudo-void-001" target="_blank" rel="noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/in/rajesh-pattan-45453b3b4" target="_blank" rel="noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Tech Showcase. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- DEDICATED SPATIAL SCENES -->
+    
+    <!-- CPU Scene (LEFT ARROW) -->
+    <div id="view-cpu" class="view spatial-scene theme-cpu">
+        <button class="scene-back-btn" aria-label="Back to home" data-target="view-main">← Back to Hero</button>
+        <div class="spatial-split vertical-split">
+            <div class="model-area">
+                <div class="webgl-canvas" data-model="cpu.glb"></div>
+            </div>
+            <div class="info-area">
+                <h2>Quantum CPU</h2>
+                <p>16-core processor designed for intense multitasking and gaming workloads.</p>
+                <ul class="specs">
+                    <li>Cores: 16 (8P + 8E)</li>
+                    <li>Threads: 24</li>
+                    <li>Boost Clock: 5.4GHz</li>
+                </ul>
+                <div class="price">$449.99</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RAM Scene (RIGHT ARROW) -->
+    <div id="view-ram" class="view spatial-scene theme-ram">
+        <button class="scene-back-btn" aria-label="Back to home" data-target="view-main">← Back to Hero</button>
+        <div class="spatial-split vertical-split">
+            <div class="model-area">
+                <div class="webgl-canvas" data-model="ram.glb"></div>
+            </div>
+            <div class="info-area">
+                <h2>High-Performance RAM</h2>
+                <p>DDR5 memory module delivering unprecedented speeds for next-gen computing.</p>
+                <ul class="specs">
+                    <li>Capacity: 32GB (2x16GB)</li>
+                    <li>Speed: 6000MHz</li>
+                    <li>Latency: CL30</li>
+                </ul>
+                <div class="price">$199.99</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LAPTOP Scene (BOTTOM ARROW) -->
+    <div id="view-laptop" class="view spatial-scene theme-laptop">
+        <button class="scene-back-btn" aria-label="Back to home" data-target="view-main">← Back to Hero</button>
+        <div class="spatial-split horizontal-split">
+            <div class="model-area">
+                <div class="webgl-canvas" data-model="laptop.glb"></div>
+            </div>
+            <div class="info-area">
+                <h2>Flagship Interactive Laptop</h2>
+                <p>Rotate freely and explore our premium design from any angle.</p>
+                <div class="contextual-controls">
+                    <span>Drag to rotate</span> • <span>Scroll to zoom</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

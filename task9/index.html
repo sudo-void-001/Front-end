@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMEN | Product Analytics</title>
+  
+  <!-- Optimization: Preconnect to font domains for faster load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Optimization: Defer script execution to prevent HTML parser blocking -->
+  <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-name">LUMEN</div>
+        <div class="brand-badge">Product Analytics</div>
+      </div>
+      <!-- Optimization: Event delegation on the parent container -->
+      <nav class="nav-menu" id="navMenu">
+        <button class="nav-item active" data-view="overview" aria-current="page">Overview</button>
+        <button class="nav-item" data-view="acquisition">Acquisition</button>
+        <button class="nav-item" data-view="engagement">Engagement</button>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <header class="top-bar">
+        <h1 class="view-title" id="viewTitle">Overview</h1>
+        <div class="meta-info">
+          <span>September 2026 &bull; Demo workspace</span>
+          <div class="density-control">
+            <label for="densityToggle">Density</label>
+            <select id="densityToggle" aria-label="Toggle UI Density">
+              <option value="comfortable">Comfortable</option>
+              <option value="compact">Compact</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <section class="filters-bar" aria-label="Data filters">
+        <div class="filter-group">
+          <label for="dateFilter">Date Range</label>
+          <select id="dateFilter">
+            <option value="7">Last 7 days</option>
+            <option value="30" selected>Last 30 days</option>
+            <option value="90">Last 90 days</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter">
+            <option value="all">All Regions</option>
+            <option value="India">India</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Asia Pacific">Asia Pacific</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="kpi-grid" id="kpiContainer" aria-label="Key Performance Indicators">
+        <!-- Rendered dynamically -->
+      </section>
+
+      <section class="charts-grid" aria-label="Data visualisations">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2 class="chart-title" id="trendChartTitle">Trend</h2>
+          </div>
+          <div class="svg-container" id="trendChartContainer">
+            <!-- Rendered SVG -->
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2 class="chart-title" id="sourceChartTitle">By Source</h2>
+          </div>
+          <div class="svg-container" id="sourceChartContainer">
+            <!-- Rendered SVG -->
+          </div>
+        </div>
+      </section>
+
+      <section class="table-section" aria-label="Detailed data table">
+        <div class="table-header">
+          <h2 class="table-title">Daily Breakdown</h2>
+        </div>
+        <div class="table-responsive">
+          <table id="dataTable">
+            <thead id="tableHead">
+              <!-- Rendered dynamically -->
+            </thead>
+            <tbody id="tableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

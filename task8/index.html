@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>KAIRO | Tools for the way you work.</title>
+  <meta name="description" content="A carefully curated catalog of modern desk, computing and gaming accessories.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="mobile-menu-left">
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="brand">
+        <a href="index.html">KAIRO</a>
+      </div>
+      
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Shop</a></li>
+          <li><a href="#category-filters">Categories</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-toggle" aria-label="Open cart">
+          Cart (<span class="cart-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <h1 class="hero-title">TOOLS FOR THE WAY YOU WORK.</h1>
+      <p class="hero-subtitle">A considered collection of accessories for focused desks, creative work and everyday computing.</p>
+    </section>
+
+    <section class="container catalog-section">
+      
+      <div class="catalog-controls">
+        <div class="controls-top">
+          <div class="search-wrapper">
+            <label for="search-input" class="visually-hidden">Search products</label>
+            <input type="search" id="search-input" class="search-input" placeholder="Search products...">
+          </div>
+          
+          <div class="sort-wrapper">
+            <label for="sort-select" class="visually-hidden">Sort by</label>
+            <select id="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+              <option value="name-desc">Name: Z–A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-filters" id="category-filters">
+          <!-- Filters generated dynamically -->
+        </div>
+      </div>
+
+      <p id="product-count" class="product-count" aria-live="polite">Showing 10 products</p>
+
+      <div id="product-grid" class="product-grid" role="region" aria-label="Product Catalog">
+        <!-- Products generated dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 KAIRO. Independent design studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="btn-close" id="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items">
+      <!-- Cart items injected here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">₹0</span>
+      </div>
+      <button class="btn btn-primary cart-toggle" onclick="alert('Checkout not required for this demo.')">Review cart</button>
+    </div>
+  </aside>
+
+</body>
+</html>

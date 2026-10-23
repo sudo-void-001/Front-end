@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rajesh Pattan - Cybersecurity and Frontend Developer Portfolio">
+    <title>Rajesh Pattan | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">RP</div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- Pre-activated hero section for immediate display without JS delay -->
+        <section id="hero" class="hero section reveal active">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Rajesh Pattan</span></h1>
+                <h2>Cybersecurity × Frontend Developer</h2>
+                <p>Building secure, useful, and polished digital experiences.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#projects" class="btn secondary-btn">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/profile.jpg" alt="Rajesh Pattan" class="profile-pic" fetchpriority="high">
+            </div>
+        </section>
+
+        <section id="about" class="about section reveal">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container retro-panel">
+                <div class="bio">
+                    <h3>Bio</h3>
+                    <p>I am a BCA student interested in cybersecurity, frontend development and practical software development. I enjoy learning by building real projects and exploring technologies across web development, programming, AI and cybersecurity.</p>
+                </div>
+                <div class="education">
+                    <h3>Education</h3>
+                    <ul>
+                        <li><strong>BCA</strong> - KLS Gogte College of Commerce, Belgaum (Rani Channamma University) <br><em>CGPA: 8.46</em></li>
+                        <li><strong>PUC</strong> - 90%</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>Won Magnum coding competition</li>
+                        <li>Won a cybersecurity CTF event</li>
+                        <li>Built an Emotion Detection project during a hackathon</li>
+                    </ul>
+                </div>
+                <div class="certifications">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Generative AI for Developers — AWS</li>
+                        <li>Web Analytics — FutureLearn</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section reveal">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">HTML</div>
+                <div class="skill-tag">CSS</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">C</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">GitHub</div>
+                <div class="skill-tag">FastAPI</div>
+                <div class="skill-tag">Streamlit</div>
+                <div class="skill-tag">Cybersecurity</div>
+                <div class="skill-tag">Nmap</div>
+                <div class="skill-tag">Gobuster</div>
+                <div class="skill-tag">FFUF</div>
+                <div class="skill-tag">Metasploit</div>
+                <div class="skill-tag">OSINT</div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section reveal">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card retro-panel">
+                    <h3>SentinelAI</h3>
+                    <p>AI-powered Cyber Threat Intelligence platform for collecting cybersecurity news and CVEs, AI summarization, reports and alerts.</p>
+                    <div class="project-tech">
+                        <span>AI</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card retro-panel">
+                    <h3>CareerPlanet</h3>
+                    <p>Career and placement platform.</p>
+                    <div class="project-tech">
+                        <span>Web Development</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sudo-void-001/CareerPlanet" target="_blank" rel="noopener noreferrer" class="btn small-btn">GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card retro-panel">
+                    <h3>Emotion Detection from Text</h3>
+                    <p>NLP-based project that detects emotions from text using machine learning.</p>
+                    <div class="project-tech">
+                        <span>Machine Learning</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card retro-panel">
+                    <h3>Gesture-Controlled 3D Particle System</h3>
+                    <p>Interactive browser-based particle system controlled through gestures.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>3D Graphics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section reveal">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container retro-panel">
+                <p>Located in Belgaum, Karnataka, India</p>
+                <div class="social-links">
+                    <a href="https://github.com/sudo-void-001" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/rajesh-pattan-45453b3b4" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.instagram.com/rajesh_pattan" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+                <a href="mailto:rajeshpattan585@gmail.com" class="btn primary-btn contact-btn">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rajesh Pattan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
