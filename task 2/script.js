@@ -1,4 +1,4 @@
-// Efficient DOM caching using getElementById (O(1)) where possible
+// Efficient DOM caching using getElementById (O(1)) where possible.
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-links");
 const navLinks = navMenu.querySelectorAll("a");
@@ -11,7 +11,7 @@ hamburger.addEventListener("click", () => {
     hamburger.setAttribute("aria-expanded", isActive);
 });
 
-// Close nav when a link is clicked
+// Close nav when a link is clicked.
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         hamburger.classList.remove("active");
