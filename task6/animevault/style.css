@@ -102,7 +102,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
 /* Dots */
 .billboard-dots   { position: absolute; bottom: 14%; left: 4%; display: flex; gap: 8px; z-index: 5; }
 .dot {
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 9px; height: 8px; border-radius: 50%;
   background: rgba(255,255,255,.4); cursor: pointer;
   transition: background var(--tx), transform var(--tx);
 }
